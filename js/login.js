@@ -174,7 +174,7 @@ function session_check()
 
 // 로그아웃 타이머 설정
 let logoutTimer;
-const logoutTime = 2000 // 5분을 밀리초로 변환
+const logoutTime = 300000
 
 // 사용자 활동 감지
 const resetTimer = () => {
@@ -186,7 +186,6 @@ const resetTimer = () => {
     }, logoutTime);
 };
 
-// 여러 이벤트에 대해 활동 감지 리스너 추가
 window.onload = resetTimer; // 페이지 로드 시
 document.onmousemove = resetTimer; // 마우스 움직임
 document.onkeypress = resetTimer;  // 키보드 입력
