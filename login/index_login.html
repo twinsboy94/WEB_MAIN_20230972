@@ -21,7 +21,9 @@
     <script type="text/javascript" src="js/test.js" defer></script>
     <script type="text/javascript" src="js/data_type.js" defer></script>
     <script type="text/javascript" src="js/pop_up.js" defer></script>
-    <body style="background-color: black;" onload="pop_up();">
+    <script type="text/javascript" src="js/login.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <body style="background-color: black;" onload="init_logined();">
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark"> 
             <div class="container-fluid">
               <nav class="navbar bg-body-tertiary">
@@ -80,7 +82,7 @@
                   </form>
                   <form>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="login/login.html" class="btn btn-outline-success" id="login.btn">로그인</a>
+                    <a href="login/logout.html" class="btn btn-outline-success" id="logout_btn">로그아웃</a>
                   </form>
                 </div>
               </nav>
@@ -95,7 +97,7 @@
         -->
         </div>
         <div style="display: flex; justify-content: center;">
-        <a href="index.html" target="_blank"><img src="image/main.png" class="img-fluid" width="1200" height="620"></a>
+        <a href="login/index_login.html" target="_blank"><img src="image/main.png" class="img-fluid" width="1200" height="620"></a>
         </div>
         <div style="display: flex; justify-content: center;">
           <table class="table">
