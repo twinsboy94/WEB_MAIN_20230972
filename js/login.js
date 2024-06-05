@@ -96,6 +96,19 @@ const check_input = () => {
     loginForm.submit();
 };
 
+function addJavascript(jsname) {
+    var th = document.getElementsByTagName("head")[0];
+    var s = document.createElement('script');
+    s.setAttribute('type', 'text/javascript');
+    s.setAttribute('sec', jsname);
+    th.appendChild(s);
+}
+
+addJavascript('/js/security.js'); // 암복호화 함수
+addJavascript('js/session.js'); // 세션 함수
+addJavascript('/js/cookie.js'); // 쿠키 함수
+
+
 function encodeByAES256(key, data) {
     const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
         iv: CryptoJS.enc.Utf8.parse(""),
@@ -140,7 +153,7 @@ function init_logined(){
     }
 }
 
-function session_set()
+/*function session_set()
 {
     let session_id = document.querySelector("#typeEmailX");
     let session_pass = document.querySelector("#typePasswordX");
@@ -152,9 +165,8 @@ function session_set()
     else {
         alert("로컬 스토리지 지원 X");
     }
-}
-
-function session_get()
+}*/
+/*function session_get()
 {
     if (sessionStorage) {
         return sessionStorage.getItem("Session_Storage_pass");
@@ -162,8 +174,35 @@ function session_get()
     else {
         alert("세션 스토리지 지원 X")
     }
+}*/
+function session_set() {
+    let id = document.querySelector("#typeEmailX");
+    let password = document.querySelector("#typePasswordX");
+    let random = new Date();
+
+    const obj = {
+        id : id.value,
+        otp : random
+    }
+
+    if (sessionStorage) {
+        const objString = JSON.stringify(obj);
+        let en_text = encrypt_text(objString);
+        sessionStorage.setItem("Session_Storage_object", objString);
+        sessionStorage.setItem("Session_Storage_encrypted", en_text);
+    }
+    else {
+        alert("세션 스토리지를 지원하지 않습니다.");
+    }
 }
 
+function session_get() {
+    if (sessionStorage) {
+        return sessionStorage.getItem("Session_Storage_encrypted");
+    } else {
+        alert("세션 스토리지를 지원하지 않습니다.");
+    }
+}
 function session_check()
 {
     if (sessionStorage.getItem("Session_Storage_id")){

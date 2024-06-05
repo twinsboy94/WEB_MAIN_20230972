@@ -24,4 +24,16 @@ function logout()
     location.href='../index.html';
 }
 
+function addJavascript(jsname) {
+    var th = document.getElementsByTagName("head")[0];
+    var s = document.createElement('script');
+    s.setAttribute('type', 'text/javascript');
+    s.setAttribute('sec', jsname);
+    th.appendChild(s);
+}
+
+addJavascript('/js/security.js'); // 암복호화 함수
+addJavascript('js/session.js'); // 세션 함수
+addJavascript('/js/cookie.js'); // 쿠키 함수
+
 document.getElementById("logout_bye").addEventListener('click', logout);
