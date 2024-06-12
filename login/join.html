@@ -15,81 +15,108 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="js/join.js" defer></script>
         <link rel="stylesheet" href="../CSS/font.css">
+        <link rel="stylesheet" href="../CSS/svg-color.css">
     </head>
     <body>
-        <form id="form_main">
-        <section class="vh-100" style="background-color: #1375ff;">
-            <div class="container h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-lg-12 col-xl-11">
-                  <div class="card text-black" style="border-radius: 25px;">
-                    <div class="card-body p-md-5">
-                      <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-          
-                          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">회원가입</p>
-          
-                          <form class="mx-1 mx-md-4">
-          
-                            <div class="d-flex flex-row align-items-center mb-4">
-                              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                              <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="text" id="Name" class="form-control" />
-                                <label class="form-label" for="myname">귀하의 이름을 입력해주세요</label>
-                              </div>
-                            </div>
-          
-                            <div class="d-flex flex-row align-items-center mb-4">
-                              <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                              <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="email" id="typeEmailX" class="form-control" />
-                                <label class="form-label" for="typeEmailX">귀하의 이메일을 입력해주세요</label>
-                              </div>
-                            </div>
-          
-                            <div class="d-flex flex-row align-items-center mb-4">
-                              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                              <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="password" id="typePasswordX" class="form-control" />
-                                <label class="form-label" for="typePasswordX">사용하실 비밀번호를 입력해주세요</label>
-                              </div>
-                            </div>
-          
-                            <div class="d-flex flex-row align-items-center mb-4">
-                              <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                              <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="password" id="repeat" class="form-control" />
-                                <label class="form-label" for="repeat">비밀번호를 다시 입력해주세요</label>
-                              </div>
-                            </div>
-          
-                            <div class="form-check d-flex justify-content-center mb-5">
-                              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                              <label class="form-check-label" for="form2Example3">
-                                나는 본 홈페이지의 <a href="#!">이용약관</a>에 동의합니다.
-                              </label>
-                            </div>
-          
-                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                <input class="btn btn-primary btn-lg" onclick="join()" type="button" id="join_btn" value="회원가입"/>
-                            </div>
-          
-                          </form>
-          
+      
+      <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                  <img src="image/riot.svg" class="svg-color" alt="Logo" width="130" class="d-inline-block align-text-top" onmouseover="over(this)" onmouseout="out(this)"><br><br>
+                  <form method="get" action="/login/join_end.html" id="form_main">
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+      
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="text" id="firstName" class="form-control form-control-lg" />
+                          <label class="form-label" for="firstName">이름</label>
                         </div>
-                        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-          
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                            class="img-fluid" alt="Sample image">
-          
+      
+                      </div>
+                      <div class="col-md-6 mb-4">
+      
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="text" id="lastName" class="form-control form-control-lg" />
+                          <label class="form-label" for="lastName">닉네임</label>
                         </div>
+      
                       </div>
                     </div>
-                  </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 d-flex align-items-center">
+      
+                        <div data-mdb-input-init class="form-outline datepicker w-100">
+                          <input type="text" class="form-control form-control-lg" id="birthdayDate" />
+                          <label for="birthdayDate" class="form-label">생일</label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4">
+      
+                        <h6 class="mb-2 pb-1">성별: </h6>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                            value="option1" checked />
+                          <label class="form-check-label" for="femaleGender">여성</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                            value="option2" />
+                          <label class="form-check-label" for="maleGender">남성</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                            value="option3" />
+                          <label class="form-check-label" for="otherGender">기타</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="email" id="emailAddress" class="form-control form-control-lg" />
+                          <label class="form-label" for="emailAddress">이메일</label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
+                          <label class="form-label" for="phoneNumber">전화번호</label>
+                        </div>
+      
+                      </div>
+                    </div>
+                    
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <div data-mdb-input-init class="form-outline">
+                        <input type="password" id="password" class="form-control form-control-lg" />
+                        <label class="form-label" for="password">비밀번호</label>
+                    </div>
+      
+                    <div class="mt-4 pt-2">
+                      <input data-mdb-ripple-init class="btn btn-primary btn-lg" id="join" type="submit" value="회원가입"/>
+                    </div>
+      
+                  </form>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
         <div style="display: flex; justify-content: center;">
             <h3 style="font-size: 12px; font-weight: normal; font-style: normal; color: gray; font-family: '굴림';">™ & Ⓒ 2024 Riot Games, Inc. League of Legends and all related logos, characters, names and distinctive<br>likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.<br><br>라이엇게임즈코리아 유한회사 서울특별시 강남구 테헤란로 521 30층 (삼성동, 파트나스타워)<br>대표자 : 조혁진 | 대표전화 - 02-3454-1560 | FAX : 02-3452-1565 사업자등록번호 : 120-87-68488<br>통신판매업신고 : 2011-서울강남-02718<div></h3>
