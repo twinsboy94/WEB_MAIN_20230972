@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Freesentation-7Bold';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-7Bold.woff2') format('woff2');
     font-weight: 700;
@@ -10,6 +17,9 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-6SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
+}
+hello{
+    font-family:Freesentation-9Black;
 }
 
 body{
